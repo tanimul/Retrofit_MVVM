@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:gravity="center"
+        android:text="Ratrofit"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_ratrofit_fullName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Full Name"
+        android:inputType="text"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:id="@+id/et_ratrofit_universityId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="University Id"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:id="@+id/et_ratrofit_courseCode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Course Code"
+        android:inputType="text"
+        android:paddingStart="20dp" />
+
+    <Button
+        android:id="@+id/bt_ratrofit_save"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Add Data by Ratrofit"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_ratrofit_showList"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Show List by Ratrofit" />
+
+
+    <!--    Another Part-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/teal_200"
+        android:gravity="center"
+        android:text="Room"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_room_fullName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Full Name"
+        android:inputType="text"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:id="@+id/et_room_universityId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="University Id"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:id="@+id/et_room_courseCode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Course Code"
+        android:inputType="text"
+        android:paddingStart="20dp" />
+
+    <Button
+        android:id="@+id/bt_room_save"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Add Data by Room"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_room_showList"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Show List by Room" />
+</LinearLayout>
