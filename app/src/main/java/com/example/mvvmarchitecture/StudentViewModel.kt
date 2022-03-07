@@ -10,8 +10,12 @@ class StudentViewModel : ViewModel() {
     val allWorkes: LiveData<Model_Response>
 
     init {
-        repository= StudentRepository(apiClient = ApiClient())
+        repository = StudentRepository()
         allWorkes = repository.studentList()
+    }
+
+    fun createNewStudent(student: Model_Student): LiveData<String> {
+        return repository.createStudent(student)
     }
 
 }

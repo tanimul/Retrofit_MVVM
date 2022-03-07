@@ -8,12 +8,12 @@ import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import kotlin.math.log
 
-class StudentRepository(private val apiClient: ApiClient) {
-    val TAG = "StudentRepository"
-    val apiInterface: ApiInterface = apiClient.getClient()
-    val result = MutableLiveData<Model_Response>()
-    fun studentList(): LiveData<Model_Response> {
+class StudentRepository() {
+    private val TAG: String = "StudentRepository"
+    private val apiInterface: ApiInterface = ApiClient.getClient()
 
+    fun studentList(): LiveData<Model_Response> {
+        val result = MutableLiveData<Model_Response>()
         apiInterface.getList().subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -21,7 +21,7 @@ class StudentRepository(private val apiClient: ApiClient) {
                     Log.d(TAG, "accept: ")
                     if (modelrespose != null) {
                         result.postValue(modelrespose)
-                        Log.d(TAG, "studentList: Response ->> "+modelrespose.data?.size)
+                        Log.d(TAG, "studentList: Response ->> " + modelrespose.data?.size)
                     }
                 },
                 Consumer<Throwable?> { Log.d(TAG, "accept: Throw") })
@@ -29,4 +29,24 @@ class StudentRepository(private val apiClient: ApiClient) {
         return result
     }
 
+     fun createStudent(modelStudent: Model_Student): LiveData<String> {
+        val result = MutableLiveData<String>()
+        apiInterface.createStudent(modelStudent).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                Consumer { respose ->
+                    Log.d(TAG, "Accept: $respose")
+
+                    if (respose != null) {
+                        result.postValue(respose)
+                    }
+//                    else{
+//                        result.postValue(null)
+//                    }
+                }, Consumer<Throwable> {
+                    Log.d(TAG, "accept: Throw")
+                }
+            )
+        return result
+    }
 }

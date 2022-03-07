@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MVVMArchitecture">
         <activity
+            android:name=".Add_Update_Activity"
+            android:exported="false" />
+        <activity
             android:name=".ShowlistActivity"
             android:exported="false" />
         <activity

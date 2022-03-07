@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Kotlin/Android Kotlin/MVVMArchitecture/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.19" />
+        <entry key="..\:/Kotlin/Android Kotlin/MVVMArchitecture/app/src/main/res/layout/activity_add_update.xml" value="0.22864583333333333" />
         <entry key="..\:/Kotlin/Android Kotlin/MVVMArchitecture/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Kotlin/Android Kotlin/MVVMArchitecture/app/src/main/res/layout/activity_showlist.xml" value="0.25" />
-        <entry key="..\:/Kotlin/Android Kotlin/MVVMArchitecture/app/src/main/res/layout/layout_user_list.xml" value="0.22" />
+        <entry key="..\:/Kotlin/Android Kotlin/MVVMArchitecture/app/src/main/res/layout/layout_user_list.xml" value="0.33" />
       </map>
     </option>
   </component>
