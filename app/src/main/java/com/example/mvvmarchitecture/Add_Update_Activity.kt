@@ -1,11 +1,14 @@
 package com.example.mvvmarchitecture
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvmarchitecture.databinding.ActivityAddUpdateBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Add_Update_Activity : AppCompatActivity() {
     private lateinit var binding: ActivityAddUpdateBinding
@@ -38,7 +41,7 @@ class Add_Update_Activity : AppCompatActivity() {
         } else {
             val modelStudent = Model_Student(fullName, universityId, courseCode)
             studentViewModel.createNewStudent(modelStudent)
-                .observe(this, Observer<String>() {
+                .observe(this, Observer<String?>() {
                     if (it != null && it.equals("Data Inserted")) {
                         Toast.makeText(this, "Data Inserted", Toast.LENGTH_SHORT).show()
                     } else {
@@ -46,6 +49,8 @@ class Add_Update_Activity : AppCompatActivity() {
                     }
 
                 })
+
+
         }
     }
 }

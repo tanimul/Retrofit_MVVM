@@ -29,11 +29,23 @@ class MainActivity : AppCompatActivity() {
             this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         )[StudentViewModel::class.java]
 
-        showList()
-
+        // showList()
+        showListACoroutine()
         binding.ivAdd.setOnClickListener {
             startActivity(Intent(this, Add_Update_Activity::class.java))
         }
+    }
+
+    private fun showListACoroutine() {
+        studentViewModel.getListCoroutine()
+        studentViewModel.allWorkesCoroutine.observe(this) {
+            Log.d(
+                "ShowlistActivity", "Data Observed: "
+            )
+            it?.let { it1 -> students.addAll(it1) }
+            studentAdapter.notifyDataSetChanged()
+        }
+
     }
 
     private fun showList() {
@@ -43,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             Log.d(
                 "ShowlistActivity", "Data Observed: "
             )
-            it.data?.let { it1 -> students.addAll(it1) }
+            it?.data?.let { it1 -> students.addAll(it1) }
             studentAdapter.notifyDataSetChanged()
         }
     }
